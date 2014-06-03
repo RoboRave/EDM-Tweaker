@@ -1,0 +1,67 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+    // uncomment if your not symlinking
+	classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+apply plugin: "curseforge"
+apply plugin: 'forge'
+
+version = "0.1.5"
+group= "mods.roborave.edm.tweaker" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "EDM-Tweaker"
+
+minecraft {
+    version = "1.7.2-10.12.1.1060"
+    assetDir = "eclipse/assets"
+}
+
+curse {
+   // apiKey = 034d2027-1051-48a4-bab3-cc590854bbf0 // saved in my gradle.properties file
+    projectId = "220984" // my project url is
+    changelog = """
+	- First Version
+	- Will fix errors in EDM
+	"""
+    releaseType = "release"
+
+    // the default obfuscated jar is uploaded by default
+	//artifact = project.file("/build/lib/EDM-Tweaker-0.1.2.jar")
+
+    // allows you to add extra compatible MC versions. The one specified in the minecraft{} block is used by default.
+     addGameVersion "1.7.2"
+    // addGameversion "1.7.0", "1.7.4"
+}
+
+dependencies {
+  compile files('libs/EDM.zip')
+  compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24'
+}
+
+processResources
+{
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    // copy everything else, thats not the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
