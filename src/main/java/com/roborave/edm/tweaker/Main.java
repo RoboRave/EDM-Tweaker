@@ -3,6 +3,7 @@ package com.roborave.edm.tweaker;
 import java.util.Arrays;
 
 import net.minecraft.init.Blocks;
+import net.minecraftforge.common.config.Configuration;
 
 import com.roborave.edm.tweaker.config.MCConfiguration;
 import com.roborave.edm.tweaker.helper.LogHelper;
@@ -47,10 +48,10 @@ public class Main
 		//meta.description="EDM";
 		
 		MCConfiguration.CreateConfig(event, Main.MODID, Main.NAME.toUpperCase());
-		this.hardMode = MCConfiguration.config.getBoolean(MCConfiguration.config.CATEGORY_GENERAL, "HardMode", this.test, this.descriptionDEV);
+		Main.hardMode = MCConfiguration.config.getBoolean(Configuration.CATEGORY_GENERAL, "HardMode", this.test, this.descriptionDEV);
 		MCConfiguration.config.save();
 		
-		if(ObfHelper.isObfuscatedEnv()){
+		if(ObfHelper.isObfuscatedEnv()==false){
 			LogHelper.info("Found Obfuscated Envorment", new Object[0]);
 			try {
 				LogHelper.info("%s", Blocks.class.getField("air").toString());
