@@ -1,15 +1,14 @@
 package com.roborave.edm.tweaker.recipe;
 
 import mods.roborave.edm.init.Items;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 
+import com.roborave.edm.tweaker.api.IObject;
 import com.roborave.edm.tweaker.api.RecipeAPI;
-import com.roborave.edm.tweaker.api.RecipeClass;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class RecipeEnchantments extends RecipeClass implements RecipeAPI {
+public class RecipeEnchantments extends IObject implements RecipeAPI {
 	 
 	 public static ItemStack BDSW;
 	 public static ItemStack BLDSW;
@@ -70,12 +69,12 @@ public class RecipeEnchantments extends RecipeClass implements RecipeAPI {
 	//	YDSW.addEnchantment(Enchantment.looting, 10);
 	}
 
-	public void init() 
+	public void initialize() 
 	{
 		this.start();
 	}
 
-	private void start() 
+	public void start() 
 	{
 		addRecipes();
 	}

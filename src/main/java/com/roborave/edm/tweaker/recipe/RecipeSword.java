@@ -1,25 +1,28 @@
 package com.roborave.edm.tweaker.recipe;
 
-import com.roborave.edm.tweaker.api.RecipeClass;
-
 import mods.roborave.edm.init.Items;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
+
+import com.roborave.edm.tweaker.api.IObject;
+import com.roborave.edm.tweaker.api.RecipeAPI;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class RecipeSword extends RecipeClass {
+public class RecipeSword extends IObject implements RecipeAPI 
+{
 	public static ItemStack BDSW;
-	 public static ItemStack BLDSW;
-	 public static ItemStack GDSW;
-	 public static ItemStack GRDSW;
-	 public static ItemStack ODSW;
-	 public static ItemStack PDSW;
-	 public static ItemStack PUDSW;
-	 public static ItemStack RDSW;
-	 public static ItemStack WDSW;
-	 public static ItemStack YDSW;
+	public static ItemStack BLDSW;
+	public static ItemStack GDSW;
+	public static ItemStack GRDSW;
+	public static ItemStack ODSW;
+	public static ItemStack PDSW;
+	public static ItemStack PUDSW;
+	public static ItemStack RDSW;
+	public static ItemStack WDSW;
+	public static ItemStack YDSW;
 	
-	public static void AddRecipes()
+	public void addRecipes()
 	{
 		BDSW = new ItemStack(Items.BDSW);
 		BDSW.addEnchantment(Enchantment.fortune, 1);
@@ -62,10 +65,14 @@ public class RecipeSword extends RecipeClass {
 		YDSW.addEnchantment(Enchantment.power, 10);
 		YDSW.addEnchantment(Enchantment.looting, 10);
 	}
-	public void init(){
+	
+	public void initialize()
+	{
 		this.start();
 	}
-	private void start() {
-		AddRecipes();
+	
+	public void start() 
+	{
+		addRecipes();
 	}
 }
