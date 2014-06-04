@@ -1,16 +1,17 @@
 package com.roborave.edm.tweaker.recipe;
 
+import com.roborave.edm.tweaker.api.RecipeClass;
+
 import mods.roborave.edm.init.Blocks;
 import mods.roborave.edm.init.Items;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class RecipesBlocks
+public class RecipesBlocks extends RecipeClass
 {
-		public static RecipesBlocks instance;
 	    
 		/**
-	     * Adds the armor recipes to the CraftingManager.
+	     * Adds the Block recipes to the CraftingManager.
 	     */
 	    public static void addRecipes()
 	    {
@@ -26,4 +27,14 @@ public class RecipesBlocks
 	    	GameRegistry.addRecipe(new ItemStack(Blocks.blockList.get("Yellow"+"_diamond_Block")), new Object[] {"XXX","XXX","XXX", 'X', Items.YD});
 	    	 
 	    }
+	    
+	    public void init()
+	    {
+	    	this.start();
+	    }
+
+		private void start() 
+		{
+			addRecipes();
+		}
 	}

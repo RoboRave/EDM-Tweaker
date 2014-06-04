@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import net.minecraft.init.Blocks;
 
+import com.roborave.edm.tweaker.config.MCConfiguration;
 import com.roborave.edm.tweaker.helper.LogHelper;
 import com.roborave.edm.tweaker.helper.ObfHelper;
 
@@ -22,6 +23,12 @@ public class Main
 	
 	@Mod.Metadata(Main.MODID)
 	public ModMetadata meta;
+
+	public static boolean hardMode;
+
+	private String descriptionDEV="this hard mod for get unenchanted swords WIP";
+
+	private boolean test=false;
     
 	public static final String MODID = "Tweaker";
     public static final String VERSION = "0.1.5";
@@ -38,6 +45,11 @@ public class Main
 		meta.name=NAME;
 		meta.version=VERSION;
 		//meta.description="EDM";
+		
+		MCConfiguration.CreateConfig(event, Main.MODID, Main.NAME.toUpperCase());
+		this.hardMode = MCConfiguration.config.getBoolean(MCConfiguration.config.CATEGORY_GENERAL, "HardMode", this.test, this.descriptionDEV);
+		MCConfiguration.config.save();
+		
 		if(ObfHelper.isObfuscatedEnv()){
 			LogHelper.info("Found Obfuscated Envorment", new Object[0]);
 			try {
