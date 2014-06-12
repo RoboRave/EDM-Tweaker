@@ -1,9 +1,7 @@
 package com.roborave.edm.tweaker.api;
 
-public class IObject {
+public abstract class IObject {
 
 	public void initialize()
-	{
-
-	}
+	{}
 }
