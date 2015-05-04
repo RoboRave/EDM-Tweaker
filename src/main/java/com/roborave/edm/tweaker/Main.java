@@ -28,7 +28,7 @@ public class Main
 
 	public static boolean hardMode;
 
-	private String descriptionDEV="this hard mod for get unenchanted swords WIP";
+	private String descriptionDEV="turn this on for hard mode which will make the swords unenchanted. WIP";
 
 	private boolean test=false;
     
