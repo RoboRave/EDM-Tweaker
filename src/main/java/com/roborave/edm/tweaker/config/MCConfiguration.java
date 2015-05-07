@@ -14,7 +14,6 @@ public class MCConfiguration extends Configuration
 {
     private final File fileRef;
     
-    
     /**
      * The configuration instance
      */
@@ -44,10 +43,9 @@ public class MCConfiguration extends Configuration
     }
     
     /**
-     * @return
+     * Used to Get file
      */
-    @SuppressWarnings("javadoc")
-	public File getConfigFile()
+    public File getConfigFile()
     {
         return this.fileRef;
     }
@@ -94,33 +92,6 @@ public class MCConfiguration extends Configuration
         }
         return false;
     }
-    
-    //    public static void renameCtgy(Configuration config, String oldCtgy, String newCtgy)
-    //    {
-    //        if (!oldCtgy.equalsIgnoreCase(newCtgy))
-    //        {
-    //            for (String prop : config.getCategory(oldCtgy).keySet())
-    //                config.get(newCtgy, prop, config.getCategory(oldCtgy).get(prop).getString());
-    //            
-    //            Map<String, HashMap<String, String>> toAdd = new HashMap<String, HashMap<String, String>>();
-    //            
-    //            for (String key : config.getCategoryNames())
-    //                if (key.contains(oldCtgy + "."))
-    //                {
-    //                    HashMap<String, String> props = new HashMap<String, String>();
-    //                    for (String prop : config.getCategory(key).keySet())
-    //                        props.put(prop, config.getCategory(key).get(prop).getString());
-    //                    
-    //                    toAdd.put(newCtgy + key.substring(key.indexOf(".")), props);
-    //                }
-    //            
-    //            for (String newName : toAdd.keySet())
-    //                for (String newProp : toAdd.get(newName).keySet())
-    //                    config.get(newName, newProp, toAdd.get(newName).get(newProp));
-    //            
-    //            //config.categories.remove(oldCtgy);
-    //        }
-    //    }
     
     /**
      * Creates a string property.
