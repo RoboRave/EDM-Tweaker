@@ -69,14 +69,11 @@ public class Main
     {
     	if(Loader.isModLoaded("Extra_Diamonds_Mod"))
     	{
-				try 
-				{
-					Tweaker.load();
-				} 
-					catch (Exception e) 
-				{
-					e.printStackTrace();
-				}
+    		try{
+    			Tweaker.load();
+    		}catch (Exception e){
+    			e.printStackTrace();
+		}
     	}
     }
 }
