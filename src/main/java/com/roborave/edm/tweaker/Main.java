@@ -16,7 +16,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-@Packager(getName=Main.NAME, getVersion=Main.VERSION,getBaseDirectories = { "com.roborave.edm" }, getClasses = { "com.roborave" })
+@Packager(getName=Main.NAME, getVersion=Main.VERSION,getBaseDirectories = { "com.roborave.edm.tweaker" }, getClasses = { "com.roborave" })
 @Mod(modid = Main.MODID, version = Main.VERSION,name=Main.NAME)
 public class Main
 {
