@@ -1,0 +1,16 @@
+[
+{
+  "modid": "DyeableBeacons",
+  "name": "Dyeable Beacons",
+  "description": "Make your beacons colourful",
+  "version": "1.1.1",
+  "credits": "",
+  "logoFile": "",
+  "url": "http://www.coremodding.info/",
+  "updateUrl": "",
+  "authorList": ["nxsupert", "Core Modding"],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": []
+}
+]

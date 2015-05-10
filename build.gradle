@@ -47,7 +47,7 @@ curse {
 
 dependencies {
   compile files('libs/EDM.zip')
-  compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24'
+  //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24'
 }
 
 processResources
