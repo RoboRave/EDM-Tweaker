@@ -19,7 +19,7 @@ buildscript {
 apply plugin: "curseforge"
 apply plugin: 'forge'
 
-version = "0.2.5"
+version = "0.2.8"
 group= "mods.roborave.edm.tweaker" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "EDM-Tweaker"
 
